@@ -1,0 +1,160 @@
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Code2 } from 'lucide-react';
+import Button from '../components/Button';
+import ServiceForm from '../components/ServiceForm';
+import { handleScrollTo } from '../utils/scrollTo';
+import heroVideo from '../assets/Animated_video/hero.mp4';
+
+const stats = [
+  { label: 'Apps Shipped', value: '120+' },
+  { label: 'Launches Secured', value: '98%' },
+  { label: 'Average Lighthouse', value: '90+' },
+];
+
+const Hero = () => {
+  const heroVideoRef = useRef(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const syncPlayback = () => {
+      video.defaultPlaybackRate = 2;
+      video.playbackRate = 2;
+      void video.play().catch(() => {});
+    };
+
+    const resumePlayback = () => {
+      if (document.visibilityState === 'visible') {
+        syncPlayback();
+      }
+    };
+
+    video.addEventListener('loadedmetadata', syncPlayback);
+    video.addEventListener('canplay', syncPlayback);
+    video.addEventListener('playing', syncPlayback);
+    video.addEventListener('waiting', syncPlayback);
+    video.addEventListener('stalled', syncPlayback);
+    document.addEventListener('visibilitychange', resumePlayback);
+
+    return () => {
+      video.removeEventListener('loadedmetadata', syncPlayback);
+      video.removeEventListener('canplay', syncPlayback);
+      video.removeEventListener('playing', syncPlayback);
+      video.removeEventListener('waiting', syncPlayback);
+      video.removeEventListener('stalled', syncPlayback);
+      document.removeEventListener('visibilitychange', resumePlayback);
+    };
+  }, []);
+
+  return (
+    <section id="hero" className="section relative flex min-h-screen items-center overflow-hidden pb-[90px] pt-[216px] sm:pb-[120px] sm:pt-[145px] md:pb-[170px] lg:pt-[180px]">
+      <div className="absolute inset-0 -z-20 overflow-hidden">
+        <video
+          ref={heroVideoRef}
+          className="h-full w-full object-cover"
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.58)_0%,rgba(2,6,23,0.42)_28%,rgba(2,6,23,0.64)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(79,140,255,0.14),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(124,92,255,0.16),transparent_34%),radial-gradient(circle_at_center,rgba(45,212,191,0.12),transparent_40%)]" />
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px] opacity-25 -z-10" />
+      <div className="absolute inset-0 dev-noise opacity-80" />
+      <div className="hero-shape shape-terminal left-[7%] top-[14%] opacity-80" />
+      <div className="hero-shape shape-bracket right-[10%] top-[16%] opacity-70" />
+      <div className="hero-shape shape-beam left-[10%] top-[66%] opacity-75" />
+      <div className="hero-shape shape-node right-[13%] top-[58%] opacity-80" />
+      <div className="hero-shape shape-code left-[58%] top-[74%] opacity-75" />
+
+      <div className="container mx-auto grid w-full grid-cols-1 items-center gap-10 px-5 sm:gap-12 sm:px-6 lg:grid-cols-12 lg:gap-10 xl:gap-12 z-10">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-start text-left lg:col-span-7"
+        >
+          <div className="pt-12 sm:pt-0">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#071425]/88 px-5 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:mb-8"
+            >
+              <Code2 className="h-4 w-4 text-primary" />
+              <span className="text-[11px] font-black uppercase tracking-[0.22em] text-white/90">Open For Product Builds & Engineering Delivery</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.08 }}
+              className="mb-6 max-w-full text-[2.95rem] font-black uppercase leading-[0.92] tracking-tight text-white sm:mb-8 sm:text-6xl sm:leading-[0.9] md:text-8xl lg:text-[6.8rem] xl:text-8xl"
+            >
+              <span className="block">Building</span>
+              <span className="block text-gradient break-words">Production</span>
+              <span className="mt-2 inline-block max-w-full rounded-2xl bg-primary px-3.5 py-2 text-white shadow-2xl shadow-primary/20 break-words sm:px-6">
+                Systems.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.16 }}
+              className="mb-8 max-w-xl text-base font-light leading-relaxed tracking-tight text-white sm:mb-10 sm:text-lg md:text-xl lg:max-w-[34rem] xl:max-w-xl"
+            >
+              We design, build, ship, and scale full-stack products with clean code, stronger infrastructure, and real launch discipline.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.24 }}
+              className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row"
+            >
+              <a href="#services" onClick={(e) => handleScrollTo(e, '#services')} className="block w-full sm:w-auto">
+                <Button variant="primary" className="group w-full rounded-full px-10 py-5 text-sm font-black uppercase tracking-widest shadow-[0_0_24px_rgba(255,122,24,0.24)] hover:shadow-[0_0_38px_rgba(255,61,129,0.34)] sm:w-auto">
+                  Explore Systems <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+              <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')} className="block w-full sm:w-auto">
+                <Button variant="outline" className="w-full rounded-full border-white/20 bg-white/[0.02] px-10 py-5 text-sm font-black tracking-widest text-white uppercase hover:border-primary hover:text-primary sm:w-auto">
+                  Book Strategy
+                </Button>
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="mt-12 grid w-full max-w-xl grid-cols-3 gap-x-4 gap-y-5 border-t border-white/10 pt-8 sm:mt-16 sm:gap-x-8 sm:pt-10"
+            >
+              {stats.map((stat) => (
+                <div key={stat.label} className="min-w-0">
+                  <div className="font-heading text-[2rem] font-black leading-none text-white sm:text-4xl">{stat.value}</div>
+                  <div className="mt-1 text-[9px] font-black uppercase tracking-[0.18em] text-white/50 sm:text-[10px] sm:tracking-widest">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <div className="relative w-full lg:col-span-5">
+            <div className="absolute -inset-10 -z-10 rounded-full bg-primary/20 blur-[100px] opacity-20" />
+            <ServiceForm forceDark />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
