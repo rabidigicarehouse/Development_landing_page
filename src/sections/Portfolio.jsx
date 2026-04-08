@@ -180,9 +180,9 @@ const PortfolioCard = memo(function PortfolioCard({ project, index }) {
 const Portfolio = () => {
 
   return (
-    <section className="section overflow-hidden bg-slate-50 py-32 dark:bg-dark-bg" id="work">
-      <div className="container mx-auto px-6">
-        <div className="mb-16 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+    <section className="section overflow-hidden bg-slate-50 py-24 xl:py-28 2xl:py-32 dark:bg-dark-bg" id="work">
+      <div className="container laptop-scale-section mx-auto px-6">
+        <div className="mb-12 xl:mb-14 2xl:mb-16 flex flex-col gap-8 xl:gap-10 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading title="Shipped Systems" subtitle="Selected Build Work" />
           <a
             href="#contact"
@@ -193,7 +193,7 @@ const Portfolio = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 xl:gap-9 2xl:gap-10 md:grid-cols-2">
           {projects.map((project, index) => (
             <PortfolioCard key={project.title} project={project} index={index} />
           ))}

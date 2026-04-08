@@ -49,7 +49,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="section relative flex min-h-screen items-center overflow-hidden pb-[90px] pt-[216px] sm:pb-[120px] sm:pt-[145px] md:pb-[170px] lg:pt-[180px]">
+    <section id="hero" className="section relative flex min-h-screen items-center overflow-hidden pb-[90px] pt-[216px] sm:pb-[120px] sm:pt-[145px] md:pb-[150px] lg:pt-[98px] xl:pt-[106px] 2xl:pt-[180px] lg:pb-[52px] xl:pb-[62px] 2xl:pb-[170px]">
       <div className="cursor-video absolute inset-0 -z-20 overflow-hidden">
         <video
           ref={heroVideoRef}
@@ -74,19 +74,19 @@ const Hero = () => {
       <div className="hero-shape shape-node right-[13%] top-[58%] opacity-80" />
       <div className="hero-shape shape-code left-[58%] top-[74%] opacity-75" />
 
-      <div className="container mx-auto grid w-full grid-cols-1 items-center gap-10 px-5 sm:gap-12 sm:px-6 lg:grid-cols-12 lg:gap-10 xl:gap-12 z-10">
+      <div className="container laptop-scale-hero mx-auto grid w-full grid-cols-1 items-center gap-10 px-5 sm:gap-12 sm:px-6 lg:grid-cols-12 lg:gap-0 lg:px-2 xl:gap-1 xl:px-3 2xl:gap-12 z-10">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-start text-left lg:col-span-7"
+          className="flex flex-col items-start text-left lg:col-span-6 lg:pr-3 xl:pr-5 2xl:col-span-7"
         >
           <div className="pt-12 sm:pt-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#071425]/88 px-5 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:mb-8"
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#071425]/88 px-5 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:mb-8"
             >
               <Code2 className="h-4 w-4 text-primary" />
               <span className="text-[11px] font-black uppercase tracking-[0.22em] text-white/90">Open For Product Builds & Engineering Delivery</span>
@@ -96,7 +96,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.08 }}
-              className="mb-6 max-w-full text-[2.95rem] font-black uppercase leading-[0.92] tracking-tight text-white sm:mb-8 sm:text-6xl sm:leading-[0.9] md:text-8xl lg:text-[6.8rem] xl:text-8xl"
+              className="mb-5 max-w-full text-[2.95rem] font-black uppercase leading-[0.92] tracking-tight text-white sm:mb-8 sm:text-6xl sm:leading-[0.9] md:text-8xl lg:text-[3.15rem] xl:text-[3.55rem] 2xl:text-8xl"
             >
               <span className="block">Building</span>
               <span className="block text-gradient break-words">Production</span>
@@ -109,9 +109,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.16 }}
-              className="mb-8 max-w-xl text-base font-light leading-relaxed tracking-tight text-white sm:mb-10 sm:text-lg md:text-xl lg:max-w-[34rem] xl:max-w-xl"
+              className="mb-5 max-w-xl text-base font-light leading-relaxed tracking-tight text-white sm:mb-10 sm:text-lg lg:max-w-[22rem] lg:text-[0.86rem] xl:mb-7 xl:max-w-[24rem] xl:text-[0.92rem] 2xl:max-w-xl 2xl:text-xl"
             >
-              We design, build, ship, and scale full-stack products with clean code, stronger infrastructure, and real launch discipline.
+              The Tech Synidicate designs, builds, ships, and scales full-stack products with clean code, stronger infrastructure, and real launch discipline.
             </motion.p>
 
             <motion.div
@@ -136,7 +136,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="mt-12 grid w-full max-w-xl grid-cols-3 gap-x-4 gap-y-5 border-t border-white/10 pt-8 sm:mt-16 sm:gap-x-8 sm:pt-10"
+              className="mt-4 grid w-full max-w-xl grid-cols-3 gap-x-4 gap-y-4 border-t border-white/10 pt-6 sm:mt-16 sm:gap-x-8 sm:pt-10 lg:mt-1 lg:gap-x-3 lg:pt-3 xl:mt-3 xl:gap-x-4 xl:pt-4"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="min-w-0">
@@ -148,7 +148,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <div className="relative w-full lg:col-span-5">
+        <div className="relative w-full lg:col-span-6 lg:max-w-[39rem] lg:justify-self-end xl:max-w-[41rem] xl:justify-self-end 2xl:col-span-5 2xl:max-w-[32rem] 2xl:justify-self-end">
             <div className="absolute -inset-10 -z-10 rounded-full bg-primary/20 blur-[100px] opacity-20" />
             <ServiceForm forceDark />
         </div>

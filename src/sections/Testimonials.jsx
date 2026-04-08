@@ -43,19 +43,19 @@ const Testimonials = () => {
   const prev = () => setCurrent((curr) => (curr === 0 ? testimonials.length - 1 : curr - 1));
 
   return (
-    <section className="section overflow-hidden bg-slate-50 py-32 dark:bg-dark-bg" id="testimonials">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center gap-20 lg:flex-row">
+    <section className="section overflow-hidden bg-slate-50 py-24 xl:py-28 2xl:py-32 dark:bg-dark-bg" id="testimonials">
+      <div className="container laptop-scale-section mx-auto px-6">
+        <div className="flex flex-col items-center gap-14 xl:gap-16 2xl:gap-20 lg:flex-row">
           <div className="w-full text-left lg:w-1/3">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="mb-8 inline-flex items-center">
               <img src={googleLogo} alt="Google" className="h-10 w-auto object-contain" />
             </motion.div>
-            <h2 className="font-heading mb-10 text-6xl font-black uppercase leading-[0.8] tracking-tighter text-slate-950 dark:text-white">
+            <h2 className="font-heading mb-8 xl:mb-9 2xl:mb-10 text-5xl xl:text-[3.6rem] 2xl:text-6xl font-black uppercase leading-[0.8] tracking-tighter text-slate-950 dark:text-white">
               Shipped
               <br />
               <span className="text-gradient italic">Confidently.</span>
             </h2>
-            <p className="mb-10 text-xl font-light leading-relaxed tracking-tight text-slate-600 dark:text-gray-400">
+            <p className="mb-8 xl:mb-9 2xl:mb-10 text-lg xl:text-[1.15rem] 2xl:text-xl font-light leading-relaxed tracking-tight text-slate-600 dark:text-gray-400">
               Teams rely on us when the product has to launch cleanly, the stack has to hold up, and the delivery has to feel senior.
             </p>
 
@@ -81,17 +81,17 @@ const Testimonials = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full"
               >
-                <div className="group relative overflow-hidden rounded-[4rem] border border-black/5 bg-white p-12 shadow-2xl dark:border-white/5 dark:bg-dark-card/60 md:p-20">
+                <div className="group relative overflow-hidden rounded-[3rem] xl:rounded-[3.4rem] 2xl:rounded-[4rem] border border-black/5 bg-white p-10 shadow-2xl dark:border-white/5 dark:bg-dark-card/60 md:p-14 xl:p-16 2xl:p-20">
                   <Quote className="absolute right-10 top-10 h-24 w-24 text-primary opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
 
                   <div className="mb-10 flex items-center gap-4">
                     <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-6 w-6 fill-primary text-primary" />)}
+                      {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-6 w-6 fill-[#FBBC04] text-[#FBBC04]" />)}
                     </div>
                     <img src={verifiedBadge} alt="Verified" className="h-6 w-6 object-contain" />
                   </div>
 
-                  <p className="mb-12 text-2xl font-black uppercase leading-[1.1] tracking-tighter text-slate-950 dark:text-white md:text-4xl">
+                  <p className="mb-10 xl:mb-11 2xl:mb-12 text-2xl xl:text-[2rem] 2xl:text-4xl font-black uppercase leading-[1.1] tracking-tighter text-slate-950 dark:text-white md:text-4xl">
                     "{testimonials[current].text}"
                   </p>
 

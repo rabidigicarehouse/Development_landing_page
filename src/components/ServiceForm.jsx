@@ -117,7 +117,7 @@ export default function ServiceForm({ initialService, isMini = false, forceDark 
   };
 
   const effectiveDarkMode = forceDark || isDarkMode;
-  const fieldBase = isMini ? 'px-4 py-3 text-[15px] lg:px-3.5 lg:py-2.5 lg:text-[14px] xl:px-4 xl:py-3 xl:text-[15px]' : 'px-4 py-3.5 text-sm sm:px-5 sm:py-4';
+  const fieldBase = isMini ? 'px-4 py-3 text-[15px] lg:px-3.5 lg:py-2.5 lg:text-[14px] xl:px-4 xl:py-3 xl:text-[15px]' : 'px-4 py-3.5 text-sm sm:px-5 sm:py-4 lg:px-3.5 lg:py-[0.6875rem] lg:text-[12.5px] xl:px-4 xl:py-3 xl:text-[13px]';
   const shellClasses = forceDark
     ? 'border-primary/20 bg-[#0d1628]/90 shadow-[0_50px_100px_rgba(0,0,0,0.45)]'
     : 'border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-white/5';
@@ -147,12 +147,12 @@ export default function ServiceForm({ initialService, isMini = false, forceDark 
   }
 
   return (
-    <div className={`${isMini ? 'h-full rounded-[1.75rem] p-4 md:rounded-[2rem] md:p-5 lg:p-4 xl:p-5' : 'rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6 md:rounded-[2.5rem] md:p-10'} group relative overflow-visible border ${shellClasses}`}>
-      <h3 className={`${isMini ? 'mb-4 text-[1.85rem] md:text-[2rem] lg:text-[1.75rem] xl:text-[2rem]' : 'mb-5 text-lg sm:text-xl md:mb-6'} font-heading font-bold ${titleClasses}`}>
+    <div className={`${isMini ? 'h-full rounded-[1.75rem] p-4 md:rounded-[2rem] md:p-5 lg:p-4.5 xl:p-5.5' : 'rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6 md:rounded-[2.5rem] md:p-10 lg:p-6 xl:p-7'} group relative overflow-visible border ${shellClasses}`}>
+      <h3 className={`${isMini ? 'mb-4 text-[1.85rem] md:text-[2rem] lg:text-[1.48rem] xl:text-[1.68rem]' : 'mb-5 text-lg sm:text-xl md:mb-6 lg:text-[1.2rem] xl:text-[1.38rem]'} font-heading font-semibold ${titleClasses}`}>
         Start your project
       </h3>
 
-      <form onSubmit={handleSubmit} className={`${isMini ? 'space-y-3 lg:space-y-2.5 xl:space-y-3' : 'space-y-4'} relative z-10 w-full`}>
+      <form onSubmit={handleSubmit} className={`${isMini ? 'space-y-3 lg:space-y-2.5 xl:space-y-3' : 'space-y-4 lg:space-y-3.5 xl:space-y-4'} relative z-10 w-full`}>
         <div className={`grid grid-cols-1 md:grid-cols-2 ${isMini ? 'gap-3' : 'gap-3 sm:gap-3.5'}`}>
           <input required type="text" name="user_name" placeholder="Full Name" value={formData.user_name} onChange={handleChange} className={`w-full rounded-2xl ${inputClasses} ${fieldBase} font-light shadow-sm outline-none transition-all focus:border-primary/50`} />
           <input required type="email" name="user_email" placeholder="Email Address" value={formData.user_email} onChange={handleChange} className={`w-full rounded-2xl ${inputClasses} ${fieldBase} font-light shadow-sm outline-none transition-all focus:border-primary/50`} />
@@ -175,7 +175,7 @@ export default function ServiceForm({ initialService, isMini = false, forceDark 
           )}
         </div>
 
-        <textarea required name="message" placeholder="Project details..." rows={isMini ? 2 : 3} value={formData.message} onChange={handleChange} className={`w-full resize-none rounded-2xl ${inputClasses} ${isMini ? 'min-h-[84px] px-4 py-3 text-[15px] lg:min-h-[72px] lg:px-3.5 lg:py-2.5 lg:text-[14px] xl:min-h-[84px] xl:px-4 xl:py-3 xl:text-[15px]' : 'min-h-[110px] px-4 py-3.5 text-sm sm:px-5 sm:py-4'} font-light shadow-sm outline-none transition-all focus:border-primary/50`} />
+        <textarea required name="message" placeholder="Project details..." rows={isMini ? 2 : 3} value={formData.message} onChange={handleChange} className={`w-full resize-none rounded-2xl ${inputClasses} ${isMini ? 'min-h-[84px] px-4 py-3 text-[15px] lg:min-h-[72px] lg:px-3.5 lg:py-2.5 lg:text-[14px] xl:min-h-[84px] xl:px-4 xl:py-3 xl:text-[15px]' : 'min-h-[110px] px-4 py-3.5 text-sm sm:px-5 sm:py-4 lg:min-h-[96px] lg:px-4 lg:py-3 lg:text-[13px] xl:min-h-[104px] xl:px-5 xl:py-3.5 xl:text-sm'} font-light shadow-sm outline-none transition-all focus:border-primary/50`} />
 
         <div className={`w-full rounded-2xl border ${recaptchaWrapClasses} ${isMini ? 'mb-1 px-2.5 py-2.5 lg:px-2 lg:py-2 xl:px-2.5 xl:py-2.5' : 'mb-3 px-2.5 py-3 sm:mb-4 sm:px-4 sm:py-4'}`}>
           <div className="recaptcha-shell">

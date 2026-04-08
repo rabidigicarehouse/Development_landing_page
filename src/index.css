@@ -32,6 +32,100 @@
       radial-gradient(circle at 80% 18%, rgba(124, 92, 255, 0.08), transparent 26%),
       radial-gradient(circle at 50% 80%, rgba(45, 212, 191, 0.08), transparent 30%);
   }
+
+  @media (min-width: 1025px) and (max-width: 1366px) {
+    .laptop-scale-navbar {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.9);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-section {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.88);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-hero {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.84);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-services {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.86);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-pricing {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.86);
+      transform-origin: top center;
+      will-change: transform;
+    }
+  }
+
+  @media (min-width: 1367px) and (max-width: 1560px) {
+    .laptop-scale-navbar {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.95);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-section {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.93);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-hero {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.9);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-services {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.91);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .laptop-scale-pricing {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%) scale(0.92);
+      transform-origin: top center;
+      will-change: transform;
+    }
+  }
 }
 
 .dark .glass-card {

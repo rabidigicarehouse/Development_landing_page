@@ -64,19 +64,19 @@ const Navbar = () => {
   const dividerClass = headerOnHero ? 'border-white/12' : 'border-black/10 dark:border-white/10';
 
   return (
-    <header className={`fixed top-0 z-50 w-full transition-all duration-700 ${isScrolled ? 'bg-white/82 py-4 shadow-xl backdrop-blur-3xl border-b border-black/5 dark:bg-dark-bg/82 dark:border-white/5' : 'bg-transparent py-8'}`}>
-      <div className="container mx-auto flex items-center justify-between px-5 sm:px-6">
-        <a href="#" onClick={(e) => handleScrollTo(e, '#')} className="flex items-center group relative">
-          <img src={logo} alt="DigiCareHouse Development" className="h-11 w-auto object-contain transition-all duration-700 group-hover:scale-105 sm:h-14 md:h-16" />
+    <header className={`fixed top-0 z-50 w-full transition-all duration-700 ${isScrolled ? 'bg-white/82 py-3 lg:py-2.25 xl:py-2.75 shadow-xl backdrop-blur-3xl border-b border-black/5 dark:bg-dark-bg/82 dark:border-white/5' : 'bg-transparent py-6 lg:py-3.25 xl:py-4.25 2xl:py-8'}`}>
+      <div className="container laptop-scale-navbar mx-auto flex items-center justify-between px-5 sm:px-6 lg:pl-10 lg:pr-6 xl:pl-12 xl:pr-7 2xl:px-6">
+        <a href="#" onClick={(e) => handleScrollTo(e, '#')} className="flex items-center group relative lg:ml-2 xl:ml-3">
+          <img src={logo} alt="DigiCareHouse Development" className="h-11 w-auto max-w-[170px] object-contain object-left transition-all duration-700 group-hover:scale-105 sm:h-14 md:h-16 lg:h-[1.95rem] lg:max-w-[150px] xl:h-[2.2rem] xl:max-w-[170px] 2xl:h-16 2xl:max-w-[220px]" />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-[1.35rem] xl:gap-[1.8rem] 2xl:gap-10 lg:ml-auto xl:ml-auto lg:mr-2 xl:mr-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className={`group relative overflow-hidden text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:text-primary dark:hover:text-primary ${desktopNavTextClass}`}
+              className={`group relative overflow-hidden text-[7px] xl:text-[8px] 2xl:text-[10px] font-black uppercase tracking-[0.13em] xl:tracking-[0.17em] 2xl:tracking-[0.2em] transition-all duration-500 hover:text-primary dark:hover:text-primary ${desktopNavTextClass}`}
             >
               <span className="block transition-transform duration-500 group-hover:-translate-y-full">{link.name}</span>
               <span className="absolute left-0 top-full block text-primary transition-transform duration-500 group-hover:-translate-y-full">{link.name}</span>
@@ -84,23 +84,23 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 lg:gap-3.5 xl:gap-4.5">
           <ThemeToggle />
-          <div className={`mx-2 hidden h-6 border-l lg:block ${dividerClass}`} />
+          <div className={`mx-1.5 hidden h-6 xl:h-7 border-l lg:block ${dividerClass}`} />
           <div ref={realmRef} className="relative hidden lg:block">
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setRealmOpen((prev) => !prev)}
-              className={`group relative inline-flex items-center gap-3 overflow-hidden rounded-full border px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-500 backdrop-blur-2xl hover:border-primary/35 hover:shadow-[0_0_30px_rgba(79,140,255,0.18)] ${switchButtonClass}`}
+              className={`group relative inline-flex items-center gap-2.5 xl:gap-3 overflow-hidden rounded-full border px-3.5 xl:px-4.5 py-2 lg:py-2 xl:py-2.25 2xl:py-3 text-[6.25px] xl:text-[7.25px] 2xl:text-[10px] font-black uppercase tracking-[0.12em] xl:tracking-[0.16em] shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-500 backdrop-blur-2xl hover:border-primary/35 hover:shadow-[0_0_30px_rgba(79,140,255,0.18)] ${switchButtonClass}`}
             >
               <span className="absolute inset-0 bg-[linear-gradient(115deg,rgba(79,140,255,0.12),rgba(124,92,255,0.14),rgba(45,212,191,0.12))] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_24px_rgba(79,140,255,0.22)]">
-                <Sparkles className="h-4 w-4" />
+              <span className="relative flex h-6 w-6 xl:h-7 xl:w-7 2xl:h-9 2xl:w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_24px_rgba(79,140,255,0.22)]">
+                <Sparkles className="h-3.5 w-3.5 xl:h-4 xl:w-4" />
               </span>
               <span className="relative flex flex-col items-start leading-none">
-                <span className="text-[9px] font-black tracking-[0.28em] text-primary/80">Switch To</span>
-                <span className={`mt-1 text-[10px] font-black tracking-[0.22em] ${switchButtonTitleClass}`}>The Design Hands</span>
+                <span className="text-[5.25px] xl:text-[6.25px] 2xl:text-[9px] font-black tracking-[0.16em] xl:tracking-[0.2em] text-primary/80">Switch To</span>
+                <span className={`mt-1 text-[6.25px] xl:text-[7.25px] 2xl:text-[10px] font-black tracking-[0.1em] xl:tracking-[0.14em] ${switchButtonTitleClass}`}>The Design Hands</span>
               </span>
               <ArrowUpRight className={`relative h-4 w-4 text-primary transition-transform duration-500 ${realmOpen ? 'rotate-45' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} />
             </motion.button>
@@ -158,7 +158,7 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
           <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')} className="hidden sm:block">
-            <Button variant="primary" className="rounded-full px-8 py-3 text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/20 group hover:scale-110">
+            <Button variant="primary" className="rounded-full px-4 xl:px-5 2xl:px-8 py-2 lg:py-2 xl:py-2.25 2xl:py-3 text-[6.25px] xl:text-[7.25px] 2xl:text-[10px] font-black uppercase tracking-[0.12em] xl:tracking-[0.15em] 2xl:tracking-widest shadow-lg shadow-primary/20 group hover:scale-110">
               Connect Us <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:rotate-45" />
             </Button>
           </a>
