@@ -66,8 +66,9 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-700 ${isScrolled ? 'bg-white/82 py-3 lg:py-2.25 xl:py-2.75 shadow-xl backdrop-blur-3xl border-b border-black/5 dark:bg-dark-bg/82 dark:border-white/5' : 'bg-transparent py-6 lg:py-3.25 xl:py-4.25 2xl:py-8'}`}>
       <div className="container laptop-scale-navbar mx-auto flex items-center justify-between px-5 sm:px-6 lg:pl-10 lg:pr-6 xl:pl-12 xl:pr-7 2xl:px-6">
+        {/* Brand Identity - ENLARGED LOGO */}
         <a href="#" onClick={(e) => handleScrollTo(e, '#')} className="flex items-center group relative lg:ml-2 xl:ml-3">
-          <img src={logo} alt="DigiCareHouse Development" className="h-11 w-auto max-w-[170px] object-contain object-left transition-all duration-700 group-hover:scale-105 sm:h-14 md:h-16 lg:h-[1.95rem] lg:max-w-[150px] xl:h-[2.2rem] xl:max-w-[170px] 2xl:h-16 2xl:max-w-[220px]" />
+          <img src={logo} alt="DigiCareHouse Development" className="h-14 w-auto max-w-[220px] object-contain object-left transition-all duration-700 group-hover:scale-105 sm:h-16 md:h-[4.5rem] lg:h-[2.8rem] lg:max-w-[200px] xl:h-[3.2rem] xl:max-w-[240px] 2xl:h-[3.8rem] 2xl:max-w-[280px]" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-[1.35rem] xl:gap-[1.8rem] 2xl:gap-10 lg:ml-auto xl:ml-auto lg:mr-2 xl:mr-3">

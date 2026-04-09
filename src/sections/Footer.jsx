@@ -74,8 +74,8 @@ const Footer = () => {
                 shipping globally
               </p>
               <div className="flex flex-col gap-4">
-                <a href="mailto:info@digicarehouse.com" className="group flex items-center gap-2 font-bold text-primary">
-                  <Mail size={16} /> info@digicarehouse.com
+                <a href="mailto:info@techsyndicates.com" className="group flex items-center gap-2 font-bold text-primary">
+                  <Mail size={16} /> info@techsyndicates.com
                   <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />
                 </a>
                 <a href="tel:+18483843773" className="group flex items-center gap-2 font-bold text-primary">
