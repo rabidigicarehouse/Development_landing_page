@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone, Youtube } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '../assets/Digiicare.png';
 import ServiceModal from '../components/ServiceModal';
 import { servicesData } from '../data/services';
+import { socialLinks, companyPhoneDisplay, companyPhoneHref } from '../data/contact';
 import { handleScrollTo } from '../utils/scrollTo';
 
 const Footer = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const socialLinks = [
-    { icon: <Facebook size={20} />, href: 'https://www.facebook.com/digicarehouseagency' },
-    { icon: <Instagram size={20} />, href: 'https://www.instagram.com/digicarehouseagency/' },
-    { icon: <Youtube size={20} />, href: 'https://www.youtube.com/@digicarehouseagency' },
-    { icon: <Linkedin size={20} />, href: 'http://linkedin.com/company/digicarehouseagency' },
-  ];
-
   return (
-    <footer className="flex min-h-screen items-center overflow-hidden border-t border-black/5 bg-slate-50 pb-10 xl:pb-11 2xl:pb-12 pt-16 xl:pt-[4.5rem] 2xl:pt-20 text-slate-900 dark:border-white/5 dark:bg-dark-bg dark:text-light">
+    <footer className="section-theme-teal flex min-h-screen items-center overflow-hidden border-t border-black/5 pb-10 pt-16 text-slate-900 dark:border-white/5 dark:text-light xl:pb-11 xl:pt-[4.5rem] 2xl:pb-12 2xl:pt-20">
       <div className="container laptop-scale-section relative z-10 mx-auto px-6">
-        <div className="mb-16 xl:mb-[4.5rem] 2xl:mb-20 flex flex-col items-start justify-between gap-12 xl:gap-14 2xl:gap-16 border-b border-black/5 pb-16 xl:pb-[4.5rem] 2xl:pb-20 dark:border-white/5 lg:flex-row">
+        <div className="mb-16 flex flex-col items-start justify-between gap-12 border-b border-black/5 pb-16 dark:border-white/5 lg:flex-row xl:mb-[4.5rem] xl:gap-14 xl:pb-[4.5rem] 2xl:mb-20 2xl:gap-16 2xl:pb-20">
           <div className="w-full max-w-md">
             <a href="#" onClick={(e) => handleScrollTo(e, '#')} className="group mb-10 flex items-center">
               <img src={logo} alt="DigiCareHouse Development" className="h-16 w-auto object-contain transition-transform group-hover:scale-105 md:h-20" />
@@ -28,15 +22,15 @@ const Footer = () => {
               We build websites, apps, APIs, product systems, and cloud-ready infrastructure that help teams ship faster with less technical drag.
             </p>
             <div className="flex gap-4">
-              {socialLinks.map((s, i) => (
+              {socialLinks.map(({ label, href, image }) => (
                 <a
-                  key={i}
-                  href={s.href}
+                  key={label}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 text-slate-700 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white dark:border-white/10 dark:text-slate-200"
+                  className="flex h-14 w-14 items-center justify-center transition-all duration-500 hover:-translate-y-1 md:h-16 md:w-16"
                 >
-                  {s.icon}
+                  <img src={image} alt={label} className="h-12 w-12 rounded-full object-cover shadow-md md:h-14 md:w-14" />
                 </a>
               ))}
             </div>
@@ -46,10 +40,10 @@ const Footer = () => {
             <div className="min-w-0">
               <h4 className="mb-10 text-xs font-black uppercase tracking-widest text-slate-950/70 dark:text-white/70">Services</h4>
               <ul className="grid grid-cols-1 gap-x-12 gap-y-5 text-sm font-light sm:grid-cols-2">
-                {servicesData.map((s, i) => (
-                  <li key={i}>
-                    <button onClick={() => { setSelectedService(s); setIsModalOpen(true); }} className="inline-flex max-w-full text-left text-slate-800 transition-all duration-300 hover:text-primary dark:text-slate-300 font-bold uppercase tracking-tight leading-tight hover:-translate-y-0.5 hover:drop-shadow-[0_0_12px_rgba(79,140,255,0.28)]">
-                      {s.title}
+                {servicesData.map((service) => (
+                  <li key={service.title}>
+                    <button onClick={() => { setSelectedService(service); setIsModalOpen(true); }} className="inline-flex max-w-full text-left text-slate-800 transition-all duration-300 hover:text-primary dark:text-slate-300 font-bold uppercase tracking-tight leading-tight hover:-translate-y-0.5 hover:drop-shadow-[0_0_12px_rgba(79,140,255,0.28)]">
+                      {service.title}
                     </button>
                   </li>
                 ))}
@@ -68,18 +62,17 @@ const Footer = () => {
 
             <div className="md:col-span-2 xl:col-span-1">
               <h4 className="mb-10 text-xs font-black uppercase tracking-widest text-slate-950/70 dark:text-white/70">Agency Desk</h4>
-              <p className="mb-8 text-lg font-light italic leading-relaxed text-slate-600 dark:text-gray-400">
-                Remote-first product engineering partner
-                <br />
-                shipping globally
-              </p>
               <div className="flex flex-col gap-4">
+                <a href="https://maps.google.com/?q=BEST-CFO%2099%20Wallstreet%20New%20York%20NY%2010005" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-sm font-bold text-primary">
+                  <MapPin size={18} /> BEST-CFO - 99 WALLSTREET, NEW YORK.NY 10005
+                  <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />
+                </a>
                 <a href="mailto:info@techsyndicates.com" className="group flex items-center gap-2 font-bold text-primary">
                   <Mail size={16} /> info@techsyndicates.com
                   <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />
                 </a>
-                <a href="tel:+18483843773" className="group flex items-center gap-2 font-bold text-primary">
-                  <Phone size={16} /> +1 (848) 384 3773
+                <a href={companyPhoneHref} className="group flex items-center gap-2 font-bold text-primary">
+                  <Phone size={16} /> {companyPhoneDisplay}
                   <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />
                 </a>
               </div>

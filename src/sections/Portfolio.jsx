@@ -1,8 +1,10 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
-import { handleScrollTo } from '../utils/scrollTo';
+import Button from '../components/Button';
+import { companyPhoneHref } from '../data/contact';
+import { handlePrimaryContactAction } from '../utils/contactActions';
 import video1 from '../assets/Animated_video/1.mp4';
 import video2 from '../assets/Animated_video/2.mp4';
 import video3 from '../assets/Animated_video/3.mp4';
@@ -161,12 +163,8 @@ const PortfolioCard = memo(function PortfolioCard({ project, index }) {
       <div className="absolute inset-0 dark:bg-[radial-gradient(circle_at_22%_18%,rgba(79,140,255,0.08),transparent_22%),radial-gradient(circle_at_78%_24%,rgba(124,92,255,0.08),transparent_24%)]" />
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-transparent via-transparent to-transparent dark:from-[#0b1120] dark:via-[#0b1120]/82 dark:to-transparent" />
 
-      <div className="absolute right-6 top-6 flex h-16 w-16 items-center justify-center rounded-full border border-slate-200 bg-white/88 text-slate-700 shadow-sm backdrop-blur-md transition-all duration-500 group-hover:text-primary dark:border-white/10 dark:bg-white/6 dark:text-white/80">
-        <ArrowUpRight className="h-8 w-8 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
-      </div>
-
       <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-        <div className="mb-5 inline-flex items-center rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-700 dark:border-white/10 dark:bg-white/6 dark:text-white/78">
+        <div className="mb-5 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary shadow-[0_10px_30px_rgba(79,140,255,0.16)] dark:border-primary/30 dark:bg-primary/12 dark:text-white">
           {project.category}
         </div>
         <h3 className="font-heading w-full text-[2.3rem] font-black uppercase leading-[0.9] tracking-tighter text-white md:text-[3rem]">
@@ -180,17 +178,18 @@ const PortfolioCard = memo(function PortfolioCard({ project, index }) {
 const Portfolio = () => {
 
   return (
-    <section className="section overflow-hidden bg-slate-50 py-24 xl:py-28 2xl:py-32 dark:bg-dark-bg" id="work">
+    <section className="section section-theme-teal overflow-hidden py-24 xl:py-28 2xl:py-32" id="work">
       <div className="container laptop-scale-section mx-auto px-6">
-        <div className="mb-12 xl:mb-14 2xl:mb-16 flex flex-col gap-8 xl:gap-10 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-12 xl:mb-14 2xl:mb-16 flex flex-col gap-6 xl:gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading title="Shipped Systems" subtitle="Selected Build Work" />
-          <a
-            href="#contact"
-            onClick={(e) => handleScrollTo(e, '#contact')}
-            className="group inline-flex items-center gap-3 self-start rounded-full border border-primary/20 bg-primary/5 px-7 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-primary transition-all duration-500 hover:bg-primary/10"
+          <Button
+            variant="outline"
+            onClick={(e) => handlePrimaryContactAction(e, companyPhoneHref)}
+            className="group self-start rounded-full border-primary/20 bg-primary/5 px-7 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-primary transition-all duration-500 hover:bg-primary/10"
           >
-            View More Builds <ExternalLink className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-          </a>
+            Connect Us
+            <ArrowUpRight className="ml-3 h-4 w-4 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 gap-8 xl:gap-9 2xl:gap-10 md:grid-cols-2">

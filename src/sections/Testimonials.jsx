@@ -43,7 +43,7 @@ const Testimonials = () => {
   const prev = () => setCurrent((curr) => (curr === 0 ? testimonials.length - 1 : curr - 1));
 
   return (
-    <section className="section overflow-hidden bg-slate-50 py-24 xl:py-28 2xl:py-32 dark:bg-dark-bg" id="testimonials">
+    <section className="section section-theme-violet overflow-hidden py-24 xl:py-28 2xl:py-32" id="testimonials">
       <div className="container laptop-scale-section mx-auto px-6">
         <div className="flex flex-col items-center gap-14 xl:gap-16 2xl:gap-20 lg:flex-row">
           <div className="w-full text-left lg:w-1/3">

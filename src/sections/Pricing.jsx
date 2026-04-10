@@ -1,168 +1,100 @@
-import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, Check, Sparkles, X, Globe, Smartphone, Server, Building2 } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Boxes, Check, Code2, ServerCog, Sparkles } from 'lucide-react';
 import Button from '../components/Button';
-import { handleScrollTo } from '../utils/scrollTo';
+import { companyPhoneHref } from '../data/contact';
+import { handlePrimaryContactAction } from '../utils/contactActions';
 
-const pricingData = [
-  {
-    name: 'Starter',
-    icon: <Globe className="h-9 w-9 text-primary" />,
-    tagline: 'A focused build for one production-ready website, app module, or platform milestone.',
-    monthly: 129,
-    annual: 899,
-    features: [
-      { text: '1 Product Build Stream', included: true },
-      { text: 'Frontend or Backend Scope', included: true },
-      { text: 'Responsive QA', included: true },
-      { text: 'Deployment Support', included: true },
-      { text: '2 Revision Rounds', included: true },
-      { text: 'Infrastructure Ownership', included: false },
-    ],
-  },
-  {
-    name: 'Growth',
-    icon: <Smartphone className="h-9 w-9 text-secondary" />,
-    tagline: 'A multi-sprint product build with interfaces, APIs, integrations, and release support.',
-    monthly: 279,
-    annual: 1499,
-    features: [
-      { text: 'Everything in Starter', included: true },
-      { text: 'Frontend + Backend Delivery', included: true },
-      { text: 'Admin & Dashboard Systems', included: true },
-      { text: 'CMS / Commerce Integration', included: true },
-      { text: 'QA & Performance Pass', included: true },
-      { text: 'Priority Release Support', included: true },
-    ],
-  },
-  {
-    name: 'Scale',
-    icon: <Server className="h-9 w-9 text-teal" />,
-    tagline: 'Best for teams building serious product infrastructure and customer-facing platforms.',
-    monthly: 499,
-    annual: 1999,
-    popular: true,
-    features: [
-      { text: 'Everything in Growth', included: true },
-      { text: 'SaaS Product Architecture', included: true },
-      { text: 'DevOps / Cloud Setup', included: true },
-      { text: 'Advanced Roles & Billing', included: true },
-      { text: 'Testing & Monitoring', included: true },
-      { text: 'Dedicated Technical Lead', included: true },
-    ],
-  },
-  {
-    name: 'Custom',
-    icon: <Building2 className="h-9 w-9 text-slate-500 dark:text-slate-300" />,
-    tagline: 'For larger engineering partnerships, platform rewrites, migrations, or multi-team roadmaps.',
-    monthly: 'Custom',
-    annual: 'Custom',
-    features: [
-      { text: 'Fractional Product Engineering', included: true },
-      { text: 'Legacy Rebuilds & Migrations', included: true },
-      { text: 'Cross-Team Delivery Planning', included: true },
-      { text: 'Security / Compliance Input', included: true },
-      { text: 'Long-Term Technical Ownership', included: true },
-      { text: 'Custom SLA', included: true },
-    ],
-  },
+const packageServices = [
+  'MVP and product builds',
+  'Backend APIs and architecture',
+  'Admin and dashboard systems',
+  'Cloud and deployment setup',
+  'QA and performance passes',
+  'Ongoing technical support',
 ];
 
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
-
   return (
-    <section className="section overflow-hidden bg-slate-50 py-[4.5rem] xl:py-20 2xl:py-24 dark:bg-dark-bg" id="pricing">
+    <section className="section section-theme-blue overflow-hidden pt-20 pb-14 lg:pt-[6.4rem] lg:pb-10 xl:pt-[6.9rem] xl:pb-12 2xl:pt-[7.4rem] 2xl:pb-16" id="pricing">
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="container laptop-scale-pricing relative z-10 mx-auto px-6">
-        <div className="mb-16 xl:mb-20 2xl:mb-24 flex flex-col justify-between gap-10 xl:gap-12 lg:flex-row lg:items-end">
-          <SectionHeading title="Development Programs" subtitle="Delivery Tiers" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[3rem] border border-black/5 bg-[linear-gradient(145deg,rgba(255,255,255,0.98),rgba(248,250,252,0.94))] px-6 py-8 shadow-[0_28px_90px_rgba(15,23,42,0.1)] dark:border-white/8 dark:bg-[linear-gradient(145deg,rgba(8,18,34,0.98),rgba(11,24,42,0.94))] md:px-10 md:py-10 lg:min-h-[calc(100vh-8.6rem)] lg:px-10 lg:py-8 xl:min-h-[calc(100vh-9.1rem)] xl:px-12 xl:py-10 2xl:min-h-[calc(100vh-9.5rem)] 2xl:px-14 2xl:py-12"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(79,140,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(45,212,191,0.08),transparent_32%)]" />
+          <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-primary/10 blur-[70px]" />
+          <div className="absolute right-8 top-12 hidden h-20 w-20 rounded-[1.8rem] border border-primary/18 bg-white/60 backdrop-blur-xl dark:bg-white/[0.04] lg:flex lg:items-center lg:justify-center">
+            <Code2 className="h-8 w-8 text-primary" />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-8 xl:mb-9 2xl:mb-10 flex items-center gap-2 xl:gap-2.5 2xl:gap-4 rounded-full border border-black/5 bg-black/5 p-2 xl:p-2 2xl:p-3 shadow-lg backdrop-blur-3xl dark:border-white/10 dark:bg-white/5"
-          >
-            <button onClick={() => setIsAnnual(false)} className={`rounded-full px-3.5 xl:px-4.5 2xl:px-6 py-2 xl:py-2.5 text-[9px] xl:text-[10px] 2xl:text-xs font-black uppercase tracking-[0.14em] xl:tracking-[0.18em] transition-all duration-500 ${!isAnnual ? 'bg-primary text-white' : 'opacity-40 hover:opacity-100'}`}>
-              Standard
-            </button>
-            <button onClick={() => setIsAnnual(true)} className={`flex items-center gap-1.5 xl:gap-2 rounded-full px-3.5 xl:px-4.5 2xl:px-6 py-2 xl:py-2.5 text-[9px] xl:text-[10px] 2xl:text-xs font-black uppercase tracking-[0.14em] xl:tracking-[0.18em] transition-all duration-500 ${isAnnual ? 'bg-primary text-white' : 'opacity-40 hover:opacity-100'}`}>
-              Annual <span className="rounded-full bg-white/20 px-2 py-0.5 text-[10px]">-20%</span>
-            </button>
-          </motion.div>
-        </div>
+          <div className="relative grid gap-8 lg:grid-cols-[1.06fr_.94fr] lg:items-center lg:gap-10 xl:gap-12">
+            <div>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-5 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-primary">
+                <Sparkles className="h-4 w-4" />
+                Tailored Build Scope
+              </div>
+              <h3 className="font-heading text-gradient mb-4 max-w-[16ch] text-[2.35rem] font-black uppercase leading-[0.9] tracking-tight md:text-[3.15rem] lg:max-w-[14ch] lg:text-[3rem] xl:max-w-[15ch] xl:text-[3.45rem] 2xl:text-[4rem]">
+                Development packages built around your roadmap.
+              </h3>
+              <p className="max-w-2xl text-base font-light leading-relaxed tracking-tight text-slate-600 dark:text-gray-400 md:text-lg lg:text-[0.95rem] xl:text-[1.02rem] 2xl:text-[1.08rem]">
+                MVP delivery, product engineering, and backend systems scoped to the stage, speed, and complexity of your build.
+              </p>
 
-        <div className="grid grid-cols-1 gap-8 xl:gap-9 2xl:gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {pricingData.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.8, ease: 'easeOut' }}
-              className={`group relative flex flex-col rounded-[3rem] xl:rounded-[3.4rem] 2xl:rounded-[4rem] border p-6 lg:p-6 xl:p-8 2xl:p-10 transition-all duration-700 hover:-translate-y-4 xl:hover:-translate-y-5 2xl:hover:-translate-y-6 ${
-                plan.popular
-                  ? 'z-10 scale-105 border-primary/40 bg-white shadow-2xl dark:bg-dark-card'
-                  : 'border-black/5 bg-white shadow-xl hover:border-primary/28 hover:shadow-[0_28px_70px_rgba(79,140,255,0.14)] dark:border-white/5 dark:bg-dark-card/30 dark:hover:shadow-[0_28px_70px_rgba(79,140,255,0.18)]'
-              }`}
-            >
-              <div className="pointer-events-none absolute inset-0 rounded-[4rem] bg-[radial-gradient(circle_at_top,rgba(79,140,255,0.16),transparent_55%)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
-              {plan.popular && (
-                <div className="absolute -top-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-primary px-6 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg">
-                  <Sparkles className="h-4 w-4" /> Most Requested
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-[1.8rem] border border-primary/10 bg-white/75 p-4 shadow-sm dark:bg-white/[0.03]">
+                  <Code2 className="mb-3 h-5 w-5 text-primary" />
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-900 dark:text-white">Product Builds</p>
                 </div>
-              )}
-
-                <div className="mb-10 xl:mb-11 2xl:mb-12">
-                <div className="mb-6 xl:mb-7 2xl:mb-8 flex h-14 w-14 lg:h-14 lg:w-14 xl:h-16 xl:w-16 2xl:h-20 2xl:w-20 items-center justify-center rounded-[1.25rem] xl:rounded-[1.45rem] 2xl:rounded-3xl border border-black/5 bg-slate-50 shadow-sm transition-all duration-700 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-[0_0_34px_rgba(79,140,255,0.2)] dark:border-white/10 dark:bg-white/5">
-                  {plan.icon}
+                <div className="rounded-[1.8rem] border border-secondary/10 bg-white/75 p-4 shadow-sm dark:bg-white/[0.03]">
+                  <ServerCog className="mb-3 h-5 w-5 text-secondary" />
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-900 dark:text-white">Backend Systems</p>
                 </div>
-                <h3 className="font-heading mb-3 xl:mb-4 text-[1.35rem] lg:text-[1.4rem] xl:text-[1.55rem] 2xl:text-3xl font-bold uppercase leading-none tracking-tight text-slate-950 dark:text-white">{plan.name}</h3>
-                <p className="text-xs font-light leading-relaxed tracking-tight text-slate-600 dark:text-gray-400">{plan.tagline}</p>
+                <div className="rounded-[1.8rem] border border-teal/10 bg-white/75 p-4 shadow-sm dark:bg-white/[0.03]">
+                  <Boxes className="mb-3 h-5 w-5 text-teal" />
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-900 dark:text-white">Platform Scale</p>
+                </div>
               </div>
 
-              <div className="mb-10 xl:mb-11 2xl:mb-12 h-20">
-                <span className="flex items-baseline gap-2 text-[2.25rem] lg:text-[2.3rem] xl:text-[2.6rem] 2xl:text-5xl font-black uppercase leading-none tracking-tighter text-slate-950 dark:text-white">
-                  {typeof plan.monthly === 'number' && <span className="text-lg font-light tracking-widest text-primary">$</span>}
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={isAnnual ? 'annual' : 'monthly'}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 10 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {isAnnual ? plan.annual : plan.monthly}
-                    </motion.span>
-                  </AnimatePresence>
-                  {typeof plan.monthly === 'number' && <span className="text-[10px] xl:text-xs font-light tracking-[0.18em] opacity-40">/ Month</span>}
-                </span>
-              </div>
-
-              <ul className="mb-10 xl:mb-11 2xl:mb-12 flex flex-grow flex-col gap-4 xl:gap-[1.1rem] 2xl:gap-5">
-                {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className={`flex items-start gap-4 text-xs font-medium tracking-tight ${feature.included ? 'text-slate-700 dark:text-slate-300' : 'opacity-20'}`}>
-                    {feature.included ? <Check className="h-4 w-4 shrink-0 text-primary" /> : <X className="h-4 w-4 shrink-0" />}
-                    <span className={feature.included ? '' : 'line-through'}>{feature.text}</span>
-                  </li>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {packageServices.map((service) => (
+                  <div key={service} className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="h-4 w-4" />
+                    </span>
+                    <span>{service}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
 
-              <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')} className="block w-full">
+            <div className="flex items-center lg:self-center lg:justify-end">
+              <div className="w-full rounded-[2.4rem] border border-primary/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.82))] p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] md:p-8 lg:max-w-[34rem]">
+                <p className="mb-6 text-sm font-black uppercase tracking-[0.22em] text-slate-500 dark:text-white/55">
+                  Best Fit For
+                </p>
+                <div className="mb-8 grid gap-4 text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <div>Founders turning product ideas into launch-ready builds</div>
+                  <div>Teams modernizing legacy systems or adding new product layers</div>
+                  <div>Companies needing custom engineering capacity without fixed tiers</div>
+                </div>
                 <Button
-                  variant={plan.popular ? 'primary' : 'outline'}
-                  className={`group/btn w-full justify-center rounded-full py-4 xl:py-[1.1rem] 2xl:py-5 text-[12px] xl:text-sm font-black uppercase tracking-[0.18em] shadow-xl ${plan.popular ? 'bg-primary text-white' : 'border-primary text-primary hover:bg-primary/5'}`}
+                  variant="primary"
+                  onClick={(e) => handlePrimaryContactAction(e, companyPhoneHref)}
+                  className="group w-full justify-center rounded-full py-4 text-[12px] font-black uppercase tracking-[0.18em] shadow-xl"
                 >
                   Connect Us
-                  <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-500 group-hover/btn:translate-x-2" />
+                  <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-500 group-hover:translate-x-2" />
                 </Button>
-              </a>
-            </motion.div>
-          ))}
-        </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

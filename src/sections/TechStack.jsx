@@ -21,7 +21,7 @@ const TechStack = () => {
   const list = [...technologies, ...technologies];
 
   return (
-    <section className="section overflow-hidden border-y border-black/[0.1] bg-slate-50 py-16 xl:py-[4.5rem] 2xl:py-20 dark:border-white/[0.05] dark:bg-dark-bg" id="tech">
+    <section className="section section-theme-violet overflow-hidden border-y border-black/[0.1] py-16 xl:py-[4.5rem] 2xl:py-20 dark:border-white/[0.05]" id="tech">
       <div className="flex items-center space-x-12 whitespace-nowrap animate-marquee">
         {list.map((tech, idx) => (
           <div key={idx} className="flex items-center justify-center">

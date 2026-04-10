@@ -13,7 +13,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="section overflow-hidden bg-slate-50 dark:bg-dark-bg" id="process">
+    <section className="section section-theme-teal overflow-hidden" id="process">
       <div className="absolute left-1/2 top-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
       <div className="container laptop-scale-section mx-auto px-6">
