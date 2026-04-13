@@ -9,31 +9,32 @@ import amandaImg from '../assets/Testimonials_clients/Amanda.jpg';
 import georgeImg from '../assets/Testimonials_clients/George.jpeg';
 import googleLogo from '../assets/google.png';
 import verifiedBadge from '../assets/verified.png';
+import { assetSrc } from '../utils/assetSrc';
 
 const testimonials = [
   {
     name: 'Matthew Jacobs',
     role: 'Founder, Health Beyond Hype',
     text: 'Their team brought structure to our rebuild, shipped fast, and gave us a codebase that finally felt dependable.',
-    image: matthewImg,
+    image: assetSrc(matthewImg),
   },
   {
     name: 'Rick Cruz',
     role: 'Founder, Bestway RV',
     text: 'We came in needing development help, but what we got was a full delivery partner that understood product, architecture, and launch.',
-    image: rickImg,
+    image: assetSrc(rickImg),
   },
   {
     name: 'Amanda Parsi',
     role: 'Operations Lead, Gateway Co.',
     text: 'They simplified a very messy stack into one product flow. The handoff quality and engineering clarity stood out immediately.',
-    image: amandaImg,
+    image: assetSrc(amandaImg),
   },
   {
     name: 'George Grombacher',
     role: 'Founder, Lifeblood',
     text: 'The pace was strong, the communication was clean, and the final build felt production-ready instead of rushed.',
-    image: georgeImg,
+    image: assetSrc(georgeImg),
   },
 ];
 
@@ -48,7 +49,7 @@ const Testimonials = () => {
         <div className="flex flex-col items-center gap-14 xl:gap-16 2xl:gap-20 lg:flex-row">
           <div className="w-full text-left lg:w-1/3">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="mb-8 inline-flex items-center">
-              <img src={googleLogo} alt="Google" className="h-10 w-auto object-contain" />
+              <img src={assetSrc(googleLogo)} alt="Google" className="h-10 w-auto object-contain" />
             </motion.div>
             <h2 className="font-heading mb-8 xl:mb-9 2xl:mb-10 text-5xl xl:text-[3.6rem] 2xl:text-6xl font-black uppercase leading-[0.8] tracking-tighter text-slate-950 dark:text-white">
               Shipped
@@ -88,7 +89,7 @@ const Testimonials = () => {
                     <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-6 w-6 fill-[#FBBC04] text-[#FBBC04]" />)}
                     </div>
-                    <img src={verifiedBadge} alt="Verified" className="h-6 w-6 object-contain" />
+                    <img src={assetSrc(verifiedBadge)} alt="Verified" className="h-6 w-6 object-contain" />
                   </div>
 
                   <p className="mb-10 xl:mb-11 2xl:mb-12 text-2xl xl:text-[2rem] 2xl:text-4xl font-black uppercase leading-[1.1] tracking-tighter text-slate-950 dark:text-white md:text-4xl">

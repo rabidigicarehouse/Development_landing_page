@@ -9,6 +9,7 @@ import video1 from '../assets/Animated_video/1.mp4';
 import video2 from '../assets/Animated_video/2.mp4';
 import video3 from '../assets/Animated_video/3.mp4';
 import video4 from '../assets/Animated_video/4.mp4';
+import { assetSrc } from '../utils/assetSrc';
 
 const ensureVideoPlayback = (video) => {
   if (!video) return;
@@ -29,22 +30,22 @@ const projects = [
   {
     title: 'Atlas SaaS Core',
     category: 'Product Platform',
-    video: video1,
+    video: assetSrc(video1),
   },
   {
     title: 'Checkout Engine',
     category: 'Commerce Stack',
-    video: video2,
+    video: assetSrc(video2),
   },
   {
     title: 'PocketFlow App',
     category: 'Mobile Product',
-    video: video3,
+    video: assetSrc(video3),
   },
   {
     title: 'CloudCore Infra',
     category: 'Backend Systems',
-    video: video4,
+    video: assetSrc(video4),
   },
 ];
 
