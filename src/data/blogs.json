@@ -1,35 +1,62 @@
 [
   {
-    "id": 1,
     "slug": "future-dev-ecosystem",
     "title": "The 2026 Dev Ecosystem: Performance Era",
-    "excerpt": "Why Next.js and Tailwind remain the undisputed kings of the modern web stack in 2026.",
+    "excerpt": "Why Next.js and high-performance rust-based tooling are defining the next generation of web apps.",
     "category": "Development",
-    "date": "April 10, 2026",
-    "readTime": "6 min read",
+    "date": "April 15, 2026",
+    "readTime": "12 min read",
     "image": "/assets/blogs/blog_dev.png",
-    "content": "<h1>Performance as a Feature</h1><p>In 2026, if it's not fast, it's not functional. The ecosystem has matured to favor static-first deployments and edge-computed logic.</p><h2>Type Safety Everywhere</h2><p>TypeScript has evolved from a choice to a requirement. Building robust, enterprise-grade applications requires the safety provided by a strong type system across the entire stack.</p>"
+    "content": "<h1>The Future of Scaling</h1><p>The web is no longer just documentation; it is an operating system. For developers, this means the shift toward edge computing and localized performance is non-negotiable.</p><h2>Rust-Based Tooling</h2><p>Why wait for minutes to build? The integration of Rust into our build pipelines allows for instantaneous deployment and hot-reloading that feels like magic.</p>",
+    "faqs": [
+      {
+        "question": "What is edge computing?",
+        "answer": "It's the practice of running your application code on servers physically closer to the user, reducing latency to virtually zero."
+      },
+      {
+        "question": "Why is Rust becoming important for web dev?",
+        "answer": "Rust provides memory safety and extreme speed, making it the perfect language for build tools like Turbopack that developers use every day."
+      }
+    ]
   },
   {
-    "id": 2,
-    "slug": "scalable-cloud-architecture",
-    "title": "Scalability: Thinking Large Scale From Day 1",
-    "excerpt": "Avoid the technical debt of success by architecting for 1 million users even when you only have 100.",
+    "slug": "pre-emptive-scalability",
+    "title": "Pre-emptive Scalability",
+    "excerpt": "Building for 1 million users from day one without the heavy overhead costs.",
     "category": "Development",
     "date": "April 09, 2026",
     "readTime": "9 min read",
     "image": "/assets/blogs/blog_dev_2.jpg",
-    "content": "<h1>Pre-emptive Scalability</h1><p>Architectural decisions made today will either fuel your growth or become the cage that stops it. Serverless is our answer to unpredictable load.</p><h2>The Global Edge</h2><p>Deploying your application close to your users minimizes latency and maximizes engagement. The edge is not just a location; it's a philosophy of decentralization.</p>"
+    "content": "<h1>Pre-emptive Scalability</h1><p>Architectural decisions made today will either fuel your growth or become the cage that stops it. Serverless is our answer to unpredictable load.</p><h2>The Global Edge</h2><p>Deploying your application close to your users minimizes latency and maximizes engagement. The edge is not just a location; it's a philosophy of decentralization.</p>",
+    "faqs": [
+      {
+        "question": "Is serverless more expensive?",
+        "answer": "For erratic or growing traffic, serverless is significantly cheaper because you only pay for the exact milliseconds of compute used."
+      },
+      {
+        "question": "How do you manage database connections at scale?",
+        "answer": "We use connection pooling and edge-compatible adapters to ensure that high traffic doesn't crash your database layer."
+      }
+    ]
   },
   {
-    "id": 3,
-    "slug": "performance-100ms-goal",
-    "title": "The 100ms Goal: Zero-Lag Civilized Web",
-    "excerpt": "Why perceived performance is more important than raw speed, and how to achieve the 'instant' feel.",
+    "slug": "the-instant-web",
+    "title": "The Instant Web",
+    "excerpt": "Optimizing critical path rendering for sub-100ms interaction times.",
     "category": "Development",
     "date": "April 08, 2026",
     "readTime": "5 min read",
     "image": "/assets/blogs/blog_dev_3.jpg",
-    "content": "<h1>The Instant Web</h1><p>100 milliseconds is the limit for a user to feel that an interaction is instantaneous. Our development strategy focuses on optimistic UI updates and aggressive pre-fetching.</p><h2>Optimizing the Critical Path</h2><p>Every byte of JavaScript matters. By strictly managing our bundle size and using code-splitting, we ensure that the user sees the content before they even know they're waiting.</p>"
+    "content": "<h1>The Instant Web</h1><p>100 milliseconds is the limit for a user to feel that an interaction is instantaneous. Our development strategy focuses on optimistic UI updates and aggressive pre-fetching.</p><h2>Optimizing the Critical Path</h2><p>Every byte of JavaScript matters. By strictly managing our bundle size and using code-splitting, we ensure that the user sees the content before they even know they're waiting.</p>",
+    "faqs": [
+      {
+        "question": "What is the 'Critical Path'?",
+        "answer": "It's the sequence of steps the browser takes to convert HTML, CSS, and JS into actual pixels on the screen. Optimizing this is key to speed."
+      },
+      {
+        "question": "Does image optimization really matter for speed?",
+        "answer": "Images usually account for 60% of vertical page weight. Using WebP/AVIF formats and lazy loading is essential for modern performance."
+      }
+    ]
   }
 ]
