@@ -13,13 +13,13 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="section section-theme-teal overflow-hidden" id="process">
+    <section className="section section-theme-teal flex min-h-screen items-center overflow-hidden" id="process">
       <div className="absolute left-1/2 top-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
-      <div className="container laptop-scale-section mx-auto px-6">
+      <div className="container laptop-scale-section mx-auto flex w-full flex-col justify-center px-6">
         <SectionHeading subtitle="Engineering Delivery Framework" title="Built To Ship" centered />
 
-        <div className="relative mt-16 xl:mt-20 2xl:mt-24">
+        <div className="relative mt-10 xl:mt-12 2xl:mt-16">
           <div className="pointer-events-none absolute left-0 top-[60px] hidden w-full px-20 -z-0 lg:block">
             <div className="h-[1px] w-full border-t-2 border-dashed border-slate-200 opacity-30 dark:border-white/10" />
           </div>

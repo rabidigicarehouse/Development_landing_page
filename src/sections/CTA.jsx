@@ -6,13 +6,13 @@ import { handleScrollTo } from '../utils/scrollTo';
 
 const CTA = () => {
   return (
-    <section className="section section-theme-violet overflow-hidden py-20 xl:py-24 2xl:py-[50px]" id="cta">
+    <section className="section section-theme-violet flex min-h-screen items-center overflow-hidden py-16 xl:py-20 2xl:py-20" id="cta">
       <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-full w-full max-w-[1200px] -translate-x-1/2 -translate-y-1/2 justify-between">
         <div className="h-[400px] w-[400px] rounded-full bg-primary/30 blur-[150px] mix-blend-screen" />
         <div className="-translate-y-20 h-[300px] w-[300px] rounded-full bg-secondary/30 blur-[120px] mix-blend-screen" />
       </div>
 
-      <div className="container laptop-scale-section relative z-10 mx-auto px-6 text-center">
+      <div className="container laptop-scale-section relative z-10 mx-auto flex w-full justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

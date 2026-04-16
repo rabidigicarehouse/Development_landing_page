@@ -44,8 +44,8 @@ const Testimonials = () => {
   const prev = () => setCurrent((curr) => (curr === 0 ? testimonials.length - 1 : curr - 1));
 
   return (
-    <section className="section section-theme-violet overflow-hidden py-24 xl:py-28 2xl:py-32" id="testimonials">
-      <div className="container laptop-scale-section mx-auto px-6">
+    <section className="section section-theme-violet flex min-h-screen items-center overflow-hidden py-16 xl:py-20 2xl:py-24" id="testimonials">
+      <div className="container laptop-scale-section mx-auto flex w-full flex-col justify-center px-6">
         <div className="flex flex-col items-center gap-14 xl:gap-16 2xl:gap-20 lg:flex-row">
           <div className="w-full text-left lg:w-1/3">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="mb-8 inline-flex items-center">

@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 
-import matthewImg from '../assets/Testimonials_clients/Matthew.png';
-import rickImg from '../assets/Testimonials_clients/Rick cruz.jpeg';
-import amandaImg from '../assets/Testimonials_clients/Amanda.jpg';
-import georgeImg from '../assets/Testimonials_clients/George.jpeg';
+import img1 from '../assets/development work samples/image 1.png';
+import img2 from '../assets/development work samples/image 2.png';
+import img3 from '../assets/development work samples/image 3.png';
+import img4 from '../assets/development work samples/image 4.png';
+import img5 from '../assets/development work samples/image 5.png';
 import { assetSrc } from '../utils/assetSrc';
 
 const workFrames = [
-  { image: assetSrc(matthewImg), alt: 'Product delivery showcase' },
-  { image: assetSrc(rickImg), alt: 'Commerce build showcase' },
-  { image: assetSrc(amandaImg), alt: 'Mobile sprint showcase' },
-  { image: assetSrc(georgeImg), alt: 'Infrastructure showcase' },
+  { image: assetSrc(img1), alt: 'Product delivery showcase' },
+  { image: assetSrc(img2), alt: 'Commerce build showcase' },
+  { image: assetSrc(img3), alt: 'Mobile sprint showcase' },
+  { image: assetSrc(img4), alt: 'Infrastructure showcase' },
+  { image: assetSrc(img5), alt: 'Code architecture showcase' },
 ];
 
 const reelFrames = [...workFrames, ...workFrames];
@@ -35,9 +37,9 @@ const OurWork = () => {
   }, [activeFrame]);
 
   return (
-    <section className="section section-theme-blue overflow-hidden py-24 xl:py-28 2xl:py-32" id="our-work">
-      <div className="container laptop-scale-section mx-auto px-4 sm:px-6 xl:px-8 2xl:px-10">
-        <div className="mb-12 max-w-4xl xl:mb-14 2xl:mb-16">
+    <section className="section section-theme-blue box-border flex min-h-screen items-center overflow-hidden pb-16 pt-[140px] lg:pt-[160px] xl:pb-20 xl:pt-[180px] 2xl:pb-24 2xl:pt-[190px]" id="our-work">
+      <div className="container laptop-scale-section mx-auto flex w-full flex-col justify-center px-4 sm:px-6 xl:px-8 2xl:px-10">
+        <div className="mb-10 max-w-4xl xl:mb-12 2xl:mb-14">
           <SectionHeading title="Our Work Builds" subtitle="Delivery Snapshots" />
           <p className="mt-5 max-w-2xl text-base font-light leading-relaxed tracking-tight text-slate-600 dark:text-gray-400 md:text-lg">
             A running reel of product snapshots, shipped flows, and build moments from the kinds of systems we help teams launch and scale.

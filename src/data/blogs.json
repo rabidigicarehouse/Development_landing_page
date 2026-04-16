@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "slug": "future-dev-ecosystem",
+    "title": "The 2026 Dev Ecosystem: Performance Era",
+    "excerpt": "Why Next.js and Tailwind remain the undisputed kings of the modern web stack in 2026.",
+    "category": "Development",
+    "date": "April 10, 2026",
+    "readTime": "6 min read",
+    "image": "/assets/blogs/blog_dev.png",
+    "content": "<h1>Performance as a Feature</h1><p>In 2026, if it's not fast, it's not functional. The ecosystem has matured to favor static-first deployments and edge-computed logic.</p><h2>Type Safety Everywhere</h2><p>TypeScript has evolved from a choice to a requirement. Building robust, enterprise-grade applications requires the safety provided by a strong type system across the entire stack.</p>"
+  },
+  {
+    "id": 2,
+    "slug": "scalable-cloud-architecture",
+    "title": "Scalability: Thinking Large Scale From Day 1",
+    "excerpt": "Avoid the technical debt of success by architecting for 1 million users even when you only have 100.",
+    "category": "Development",
+    "date": "April 09, 2026",
+    "readTime": "9 min read",
+    "image": "/assets/blogs/blog_dev_2.jpg",
+    "content": "<h1>Pre-emptive Scalability</h1><p>Architectural decisions made today will either fuel your growth or become the cage that stops it. Serverless is our answer to unpredictable load.</p><h2>The Global Edge</h2><p>Deploying your application close to your users minimizes latency and maximizes engagement. The edge is not just a location; it's a philosophy of decentralization.</p>"
+  },
+  {
+    "id": 3,
+    "slug": "performance-100ms-goal",
+    "title": "The 100ms Goal: Zero-Lag Civilized Web",
+    "excerpt": "Why perceived performance is more important than raw speed, and how to achieve the 'instant' feel.",
+    "category": "Development",
+    "date": "April 08, 2026",
+    "readTime": "5 min read",
+    "image": "/assets/blogs/blog_dev_3.jpg",
+    "content": "<h1>The Instant Web</h1><p>100 milliseconds is the limit for a user to feel that an interaction is instantaneous. Our development strategy focuses on optimistic UI updates and aggressive pre-fetching.</p><h2>Optimizing the Critical Path</h2><p>Every byte of JavaScript matters. By strictly managing our bundle size and using code-splitting, we ensure that the user sees the content before they even know they're waiting.</p>"
+  }
+]
