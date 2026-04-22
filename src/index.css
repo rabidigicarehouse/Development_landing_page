@@ -19,11 +19,11 @@
   }
 
   .sticky-call-bar {
-    @apply bg-gradient-to-r from-[#003366] to-[#FDCF73];
+    @apply bg-gradient-to-r from-[#4f8cff] to-[#7c5cff] text-white;
   }
 
   .dark .sticky-call-bar {
-    @apply bg-gradient-to-r from-[#FDCF73] to-[#F8F1E3] text-slate-900;
+    @apply bg-gradient-to-r from-[#4f8cff] to-[#7c5cff] text-white;
   }
 
   .text-gradient {

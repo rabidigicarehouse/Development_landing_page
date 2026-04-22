@@ -120,14 +120,14 @@ export default function ServiceForm({ initialService, isMini = false, forceDark 
   const fieldBase = isMini ? 'px-4 py-3 text-[15px] lg:px-3.5 lg:py-2.5 lg:text-[14px] xl:px-4 xl:py-3 xl:text-[15px]' : 'px-4 py-3.5 text-sm sm:px-5 sm:py-4 lg:px-3.5 lg:py-[0.6875rem] lg:text-[12.5px] xl:px-4 xl:py-3 xl:text-[13px]';
   const shellClasses = forceDark
     ? 'border-primary/20 bg-[#0d1628]/90 shadow-[0_50px_100px_rgba(0,0,0,0.45)]'
-    : 'border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-white/5';
+    : 'border-slate-200 bg-slate-50 shadow-sm dark:border-primary/20 dark:bg-[#0d1628]/90 dark:shadow-[0_50px_100px_rgba(0,0,0,0.45)]';
   const titleClasses = forceDark ? 'text-white' : 'text-slate-900 dark:text-white';
   const inputClasses = forceDark
     ? 'border border-white/10 bg-white/5 text-white placeholder:text-white/35'
-    : 'border border-slate-200 bg-white text-slate-900 dark:border-white/10 dark:bg-dark-bg/50 dark:text-white';
+    : 'border border-slate-200 bg-white text-slate-900 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/35';
   const recaptchaWrapClasses = forceDark
     ? 'border-white/10 bg-[#091120]/90'
-    : 'border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-dark-bg/60';
+    : 'border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#091120]/90';
 
   if (status === 'success') {
     return (
