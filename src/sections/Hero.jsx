@@ -54,7 +54,7 @@ const Hero = () => {
       <div className="cursor-video absolute inset-0 -z-20 overflow-hidden">
         <video
           ref={heroVideoRef}
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none"
           src={assetSrc(heroVideo)}
           autoPlay
           loop
@@ -64,7 +64,7 @@ const Hero = () => {
           disablePictureInPicture
           disableRemotePlayback
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.58)_0%,rgba(2,6,23,0.42)_28%,rgba(2,6,23,0.64)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.45)_0%,rgba(2,6,23,0.25)_28%,rgba(2,6,23,0.55)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(79,140,255,0.14),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(124,92,255,0.16),transparent_34%),radial-gradient(circle_at_center,rgba(45,212,191,0.12),transparent_40%)]" />
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px] opacity-25 -z-10" />
@@ -75,12 +75,12 @@ const Hero = () => {
       <div className="hero-shape shape-node right-[13%] top-[58%] opacity-80" />
       <div className="hero-shape shape-code left-[58%] top-[74%] opacity-75" />
 
-      <div className="container laptop-scale-hero mx-auto grid w-full grid-cols-1 items-center gap-10 px-5 sm:gap-12 sm:px-6 lg:grid-cols-12 lg:gap-0 lg:pl-10 lg:pr-6 xl:gap-1 xl:pl-12 xl:pr-7 2xl:gap-12 2xl:px-6 z-10">
+      <div className="container mx-auto grid w-full grid-cols-1 items-center gap-10 px-6 sm:gap-12 md:px-8 lg:grid-cols-12 lg:gap-0 xl:gap-1 xl:px-12 z-10">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-start text-left lg:col-span-6 lg:ml-2 lg:pr-3 xl:ml-3 xl:pr-5 2xl:col-span-7"
+          className="laptop-scale-hero-left flex flex-col items-start text-left lg:col-span-6 2xl:col-span-7"
         >
           <div className="pt-12 sm:pt-0">
             <motion.div
@@ -110,7 +110,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.16 }}
-              className="mb-5 max-w-xl text-base font-light leading-relaxed tracking-tight text-white sm:mb-10 sm:text-lg lg:max-w-[22rem] lg:text-[0.86rem] xl:mb-7 xl:max-w-[24rem] xl:text-[0.92rem] 2xl:max-w-xl 2xl:text-xl"
+              className="mb-5 max-w-lg text-base font-light leading-relaxed tracking-tight text-white sm:mb-10 sm:text-lg 2xl:max-w-xl 2xl:text-xl"
             >
               The Tech Synidicate designs, builds, ships, and scales full-stack products with clean code, stronger infrastructure, and real launch discipline.
             </motion.p>
@@ -122,12 +122,12 @@ const Hero = () => {
               className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row"
             >
               <a href="#services" onClick={(e) => handleScrollTo(e, '#services')} className="block w-full sm:w-auto">
-                <Button variant="primary" className="group w-full rounded-full px-10 py-5 text-sm font-black uppercase tracking-widest shadow-[0_0_24px_rgba(255,122,24,0.24)] hover:shadow-[0_0_38px_rgba(255,61,129,0.34)] sm:w-auto">
+                <Button variant="primary" className="group w-full rounded-full px-10 py-5 text-sm font-black uppercase tracking-widest shadow-[0_0_24px_rgba(255,122,24,0.24)] hover:shadow-[0_0_38px_rgba(255,61,129,0.34)] max-[1280px]:px-7 max-[1280px]:py-3.5 max-[1280px]:text-[12px] sm:w-auto">
                   Explore Systems <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
               <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')} className="block w-full sm:w-auto">
-                <Button variant="outline" className="w-full rounded-full border-white/20 bg-white/[0.02] px-10 py-5 text-sm font-black tracking-widest text-white uppercase hover:border-primary hover:text-primary sm:w-auto">
+                <Button variant="outline" className="w-full rounded-full border-white/20 bg-white/[0.02] px-10 py-5 text-sm font-black tracking-widest text-white uppercase hover:!border-primary hover:!text-primary max-[1280px]:px-7 max-[1280px]:py-3.5 max-[1280px]:text-[12px] sm:w-auto">
                   Book Strategy
                 </Button>
               </a>
@@ -149,9 +149,9 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <div className="relative w-full lg:col-span-6 lg:max-w-[39rem] lg:justify-self-end xl:max-w-[41rem] xl:justify-self-end 2xl:col-span-5 2xl:max-w-[32rem] 2xl:justify-self-end">
-          <div className="absolute -inset-10 -z-10 rounded-full bg-primary/20 blur-[100px] opacity-20" />
-          <ServiceForm forceDark />
+        <div className="laptop-scale-hero-right relative w-full mx-auto lg:mx-0 lg:col-span-6 lg:max-w-[39rem] lg:justify-self-end xl:max-w-[41rem] xl:justify-self-end 2xl:col-span-5 2xl:max-w-[32rem] 2xl:justify-self-end">
+            <div className="absolute -inset-10 -z-10 rounded-full bg-primary/20 blur-[100px] opacity-20" />
+            <ServiceForm />
         </div>
       </div>
     </section>
